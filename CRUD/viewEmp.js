@@ -1,8 +1,8 @@
 const inquirer = require("inquirer");
 
-function viewRoles(conn) {
+function viewEmployees(conn) {
   let query = conn.query(
-    "SELECT * FROM role",
+    "SELECT * FROM employee",
 
     function (err, results) {
       if (err) throw err;
@@ -13,4 +13,4 @@ function viewRoles(conn) {
   );
 }
 
-module.exports = viewRoles;
+module.exports = viewEmployees;
