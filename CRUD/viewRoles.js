@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 
-function viewRoles(conn) {
+function viewRoles(conn, cb) {
   let query = conn.query(
     "SELECT * FROM role",
 
@@ -8,6 +8,7 @@ function viewRoles(conn) {
       if (err) throw err;
       else {
         console.log(results);
+        cb();
       }
     }
   );

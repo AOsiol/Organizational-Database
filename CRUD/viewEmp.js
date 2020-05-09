@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 
-function viewEmployees(conn) {
+function viewEmployees(conn, cb) {
   let query = conn.query(
     "SELECT * FROM employee",
 
@@ -8,6 +8,7 @@ function viewEmployees(conn) {
       if (err) throw err;
       else {
         console.log(results);
+        cb();
       }
     }
   );
